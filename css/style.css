@@ -1,0 +1,156 @@
+/* Border box declaration 
+https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html {
+  box-sizing: border-box;
+}
+/* inherit border-box on all elements in the universe and before and after
+ */
+*, 
+*:before, 
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+	font-family: Arial, Geneva, sans-serif;
+}
+a {
+	color: #2772B0;
+}
+.wrapper {
+	width: 97%;
+	max-width: 1200px;
+	margin: 0 auto;
+	float: none;
+	background-color: #fff;
+}
+
+div img {
+	width: 100%;
+	max-width: 225px; 
+}
+
+/* grid system -- mobile first! */
+/* flex contatiner */
+
+.row {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+/* attribute selector to give some margin between columns and apply styles to flex items */
+
+[class*="col-"] {
+	margin-left: 4%;
+	flex: 0 0 92%;
+}
+
+/* Add background colors to see how much space each column is taking */
+
+.col-1 {
+	background-color: #A3CDD9;
+}
+
+.col-2 {
+	background-color: #FFFCE6;
+}
+
+/* Tablet Landscape Screen Sizes */
+@media only screen and (min-width: 480px)  {
+	
+  .col-1,
+  .col-2 {
+		flex: 0 0 44%;
+	}
+  
+  
+
+
+
+}
+/* Desktop screen Sizes */
+@media only screen and (min-width: 768px) {
+  
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   ADDITIONS FOR ROWS 3–6
+   ========================= */
+
+/* Optional tints for visibility (safe to remove) */
+.col-3 { background-color: #E8F4FF; }
+.col-4 { background-color: #F3F7FA; }
+
+/* Reordering helpers if you use them on Row 5 */
+.order-1 { order: 1; }
+.order-2 { order: 2; }
+.order-3 { order: 3; }
+
+/* ---------- Row 6: uniform image sizing ---------- */
+.row-6-unique .mini {
+  background: #f7f7f7;
+  padding: 8px;
+  margin-left: 4%;
+  flex: 0 0 92%;              /* mobile: 1 per row (you are mobile-first) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+/* Override the earlier "div img { max-width:225px }" */
+.row-6-unique .mini img {
+  width: 100%;
+  height: 160px;              /* <- uniform height for ALL Row-6 images */
+  max-width: none;            /* ignore the 225px cap above */
+  object-fit: cover;          /* crop evenly without distortion */
+  border-radius: 6px;
+  display: block;
+}
+
+/* ---------- Tablet (≥480px) ---------- */
+@media only screen and (min-width: 480px) {
+  /* If you use col-3/col-4 in other rows, keep them full width on tablet */
+  .col-3, .col-4 { flex: 0 0 92%; }
+
+  /* Row 6: show ~3 across (with your 4% gutter) */
+  .row-6-unique .mini { flex: 0 0 28%; }
+}
+
+/* ---------- Desktop (≥768px) ---------- */
+@media only screen and (min-width: 768px) {
+  /* Desktop sizes for larger columns (useful for Row 3 and 4) */
+  .col-3 { flex: 0 0 68%; }   /* pairs with .col-1 (20%) for 1×3 layout */
+  .col-4 { flex: 0 0 92%; }   /* full-width single item */
+
+  /* Row 6: show 5 across */
+  .row-6-unique .mini { flex: 0 0 16%; }
+}
+
+
+
+
+
+
+
+  
+ 	.col-1 {
+		flex: 0 0 20%;
+	}
+  
+  
+  
+	.col-2 {
+		flex: 0 0 44%;
+	}
+
+}
+
